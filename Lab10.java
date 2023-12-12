@@ -14,6 +14,8 @@ public class Lab10 {
 
     public static void Q1() {
         double a, b, r;
+        String Cval = "";
+        String Aval = "";
 
         while (true) {
             System.out.println("Pick a shape: square, rectangle, circle (or 'q' to quit)");
@@ -26,8 +28,8 @@ public class Lab10 {
             if (input.equals("square")) {
                 System.out.println("Enter the length of side a: ");
                 a = Double.parseDouble(scan.nextLine());
-                System.out.println("The circumference of the square is: " + a * 4);
-                System.out.println("The area of the square is: " + a * a);
+                Cval = "square is: " + a * 4;
+                Aval = "square is: " + a * a;
 
             } else if (input.equals("rectangle")) {
                 
@@ -35,15 +37,18 @@ public class Lab10 {
                 a = Double.parseDouble(scan.nextLine());
                 System.out.println("Enter the length of side b: ");
                 b = Double.parseDouble(scan.nextLine());
-                System.out.println("The circumference of the rectangle is: " + (2 * a + 2 * b));
-                System.out.println("The area of the rectangle is: " + (a * b));
+                Cval = "rectangle is: " + (2 * a + 2 * b);
+                Aval = "rectangle is: " + (a * b);
 
             } else if (input.equals("circle")) {
                 System.out.println("Enter the radius: ");
                 r = Double.parseDouble(scan.nextLine());
-                System.out.println("The circumference of the circle is: " + (Math.PI * r * 2));
-                System.out.println("The area of the circle is: " + (Math.PI * r * r));
+                Cval = "circle is: " + (Math.PI * r * 2);
+                Aval = "circle is: " + (Math.PI * r * r);
             }
+
+            System.out.println("The circumference of the "+Cval);
+            System.out.println("The area of the "+Aval);
         }
     }
 
