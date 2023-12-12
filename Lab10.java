@@ -157,12 +157,12 @@ public static void Q3() {
                 int attackRoll = rng.nextInt(20) + 1;
                 int damage = 0;
                 int weapon = 0;
-                int buffValue = 0;
+                int buffValue = 5;
                 int critValue = 19;
                 System.out.print("You rolled: " + attackRoll);
                 if(isBuff) {
-                    attackRoll += 5;
-                    System.out.print(" + 5 (buff active)\n");
+                    attackRoll += buffValue;
+                    System.out.print(" + "+buffValue+" (buff active)\n");
                 } else {
                     System.out.println();
                 }
@@ -172,7 +172,7 @@ public static void Q3() {
                     if(isBuff) {
                         damage += buffValue;
                     }
-                    if (attackRoll >= critVal + weapon || (isBuff && attackRoll >= critVal + buffValue + weapon)) {
+                    if (attackRoll >= critValue + weapon || (isBuff && attackRoll >= critValue + buffValue + weapon)) {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
