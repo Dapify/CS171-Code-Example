@@ -156,6 +156,7 @@ public static void Q3() {
                 turns++;
                 int attackRoll = rng.nextInt(20) + 1;
                 int damage = 0;
+                int weapon = 0;
                 System.out.print("You rolled: " + attackRoll);
                 if(isBuff) {
                     attackRoll += 5;
@@ -173,7 +174,7 @@ public static void Q3() {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
-                    System.out.print("You dealt " + damage + " damage");
+                    System.out.print("You dealt " + damage + weapon + " damage");
                     if(isBuff) {
                         System.out.print(" (buffed attack)");
                     }
