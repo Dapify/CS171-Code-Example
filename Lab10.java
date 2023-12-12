@@ -50,10 +50,25 @@ public class Lab10 {
         int num = Integer.parseInt(scan.nextLine());
         System.out.println("Enter the current month: (1-12)");
         int num2 = Integer.parseInt(scan.nextLine());
-        String months[] = {"January","February","March","April","June","July","August","September","November","December"};
+        String months[] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 
         if ((num >= 1) && (num<=31))
-            System.out.print("You selected "+num+" of ");
+            if(num==1||num==31)
+            {
+                System.out.print("You selected "+num+"st of ");
+            }
+            else if(num==2)
+            {
+                System.out.print("You selected "+num+"nd of ");
+            }
+            else if(num==3)
+            {
+                System.out.print("You selected "+num+"rd of ");
+            }
+            else if(num>=4&&num<=30)
+            {
+                System.out.print("You selected "+num+"th of ");
+            }
         else {
             System.out.println("Invalid day");
         }
