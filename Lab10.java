@@ -122,23 +122,23 @@ public static void Q3() {
     public static void Q4() {
         Random rng = new Random();
 
-        String next;
+        String playerInput;
         System.out.println("Q4: Let's play a game. Type \"A\" to attack, \"B\" to buff your next attack. Kill the enemy to win!");
         System.out.println("Q4: You must roll higher than the enemy armor class (12) to hit. Roll 20 for a critical hit!");
         System.out.println("Q4: Your damage is 2-16 (2d8)");
 
         int enemyHP = 100;
-        int a = 0;
+        int turns = 0;
 
         boolean check = false;
         while (true) {
 
             boolean doAttack = false;
-            boolean check2 = false;
-            while (!check2) {
-                next = scan.nextLine();
-                check2 = true;
-                switch (next) {
+            boolean doBuff = false;
+            while (!doBuff) {
+                playerInput = scan.nextLine();
+                doBuff = true;
+                switch (playerInput) {
                     case "A", "a":
                         doAttack = true;
                         break;
@@ -148,12 +148,12 @@ public static void Q3() {
                         break;
                     default:
                         System.out.println("Invalid input");
-                        check2 = false;
+                        doBuff = false;
                 }
             }
 
             if (doAttack) {
-                a++;
+                turns++;
                 int attackRoll = rng.nextInt(20) + 1;
                 int damage = 0;
                 System.out.print("You rolled: " + attackRoll);
@@ -186,7 +186,7 @@ public static void Q3() {
 
                 check = false;
                 if (enemyHP <= 0) {
-                    System.out.println("Enemy died in " + a + " turns");
+                    System.out.println("Enemy died in " + turns + " turns");
                     scan.close();
                     return;
                 }
