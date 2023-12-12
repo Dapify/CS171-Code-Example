@@ -181,7 +181,7 @@ public static void Q3() {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
-                    System.out.print("You dealt " + damage + weapon + " damage");
+                    System.out.print("You dealt " + (damage + weapon) + " damage");
                     if(isBuff) {
                         System.out.print(" (buffed attack)");
                     }
