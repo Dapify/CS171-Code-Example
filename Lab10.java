@@ -134,6 +134,10 @@ public static void Q3() {
 
         int enemyHP = 100;
         int turns = 0;
+        int damage = 0;
+        int weapon = 0;
+        int buffValue = 5;
+        int critValue = 19;
 
         boolean isBuff = false;
         while (true) {
@@ -160,10 +164,6 @@ public static void Q3() {
             if (doAttack) {
                 turns++;
                 int attackRoll = rng.nextInt(20) + 1;
-                int damage = 0;
-                int weapon = 0;
-                int buffValue = 5;
-                int critValue = 19;
                 System.out.print("You rolled: " + attackRoll);
                 if(isBuff) {
                     attackRoll += buffValue;
